@@ -1,8 +1,6 @@
 const express = require("express");
-
 const app = express();
-
-port = 3456;
+const port = 3456;
 
 app.listen(port, () => {
   console.log(`server listening on port ${port}`);
@@ -29,8 +27,14 @@ app.get("/api/data", (req, res) => {
 });
 
 app.post("/api/data", (req, res) => {
-  const apiAddData = req.body.apiData;
-  apiData.push(req.body, apiAddData);
+  apiData.push(req.body);
 
-  res.json({ message: `${apiAddData} was successfully added.` });
+  res.json({ message: `${req} was successfully added.` });
+});
+
+app.delete("/api/data", (req, res) => {
+  const index = req.body.index;
+  apiData.splice(index, 1);
+
+  res.json({ message: `${index} was successfully deleted` });
 });
