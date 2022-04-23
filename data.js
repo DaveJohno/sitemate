@@ -1,5 +1,3 @@
-d, title + description. 
+let apiData = [{ id: 1, title: "", description: "" }];
 
-let data = [{"id": 1, "title": "", "description":""}];
-
-module.exports = cashNotes;
+module.exports = apiData;
