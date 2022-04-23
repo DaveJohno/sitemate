@@ -23,8 +23,14 @@ app.get(`/`, (req, res) => {
 });
 
 app.get("/api/data", (req, res) => {
-  console.log(res.data);
   res.json({
     apiData,
   });
+});
+
+app.post("/api/data", (req, res) => {
+  const apiAddData = req.body.apiData;
+  apiData.push(req.body, apiAddData);
+
+  res.json({ message: `${apiAddData} was successfully added.` });
 });
